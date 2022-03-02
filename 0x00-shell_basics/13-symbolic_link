@@ -1,2 +1,2 @@
-#!/bin/bash
-ln -s /bin/ls ls
+#!/bin/dash
+in -s /bin/ls ls
