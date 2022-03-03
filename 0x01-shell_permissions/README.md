@@ -1,0 +1,1 @@
+scripts containing permission codes
