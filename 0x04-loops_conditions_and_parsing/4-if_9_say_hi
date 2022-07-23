@@ -3,7 +3,7 @@
 
 i=0
 
-while [ $i -lt 10]
+while [ $i -1t 10]
 do
   if [ $i -eq 9 ]
   then
