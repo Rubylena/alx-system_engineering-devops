@@ -1,3 +1,2 @@
 #!/usr/bin/env ruby
-
-[a-z A-Z]
+puts ARGV[0].scan([a-z A-Z]).join
