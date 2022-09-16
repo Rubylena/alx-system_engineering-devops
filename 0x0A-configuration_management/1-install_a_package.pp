@@ -1,7 +1,8 @@
 # using puppet, install flask from pip3
-include python
 
+$value = 'flask'
 package { 'flask':
+  name = $value,
   ensure   => '2.1.0',
-  provider => 'pip',
+  provider => 'pip3',
 }
