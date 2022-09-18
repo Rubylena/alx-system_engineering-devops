@@ -2,4 +2,5 @@
 # script that uses ssh to connect to your server with
 # server ubuntu using the private key
 
+ssh-add ~/.ssh/school
 ssh ubuntu@3.238.181.140
