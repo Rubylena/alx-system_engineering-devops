@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Install NGINX server, set error and redirection on the server
 
-
 apt-get -y update
 apt-get -y install nginx
 echo 'Hello World!' > /var/www/html/index.nginx-debian.html
@@ -10,14 +9,15 @@ echo "Ceci n'est pas une page" > /var/www/html/404.html
 printf %s "server {
     listen 80;
     listen [::]:80 default_server;
-    root   /etc/nginx/html;
-    index  index.html index.htm;
+    root   /var/nginx/html;
+    index  index.html index.htm index.nginx-debian.html;
+
     location /redirect_me {
         return 301 http://cuberule.com/;
     }
     error_page 404 /404.html;
     location /404 {
-      root /etc/nginx/html;
+      root /var/nginx/html;
       internal;
     }
 }" > /etc/nginx/sites-available/default
