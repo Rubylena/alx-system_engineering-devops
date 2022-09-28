@@ -6,7 +6,7 @@ sudo chown $USER:$USER /etc/haproxy/haproxy.cfg
 
 echo "
 frontend graceffiong
-	bind *:80
+	bind
 	mode http
 	default_backend console
 backend console
