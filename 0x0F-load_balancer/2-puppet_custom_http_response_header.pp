@@ -6,7 +6,7 @@
 exec { 'http header':
   command  => 'apt-get update -y;
   apt-get install nginx -y;
-  sed -i "/server_name _/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
+  sed -i "/server_name _;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
   service nginx restart';
   provider => shell,
 }
