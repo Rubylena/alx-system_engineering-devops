@@ -1,1 +1,1 @@
-sed '11 i\*nat\n:PREROUTING ACCEPT [0:0]\n-A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080\nCOMMIT' 100-port_forwarding
+sed '11 i\*nat\n:PREROUTING ACCEPT [0:0]\n-A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080\nCOMMIT\n' /etc/ufw/before.rules
