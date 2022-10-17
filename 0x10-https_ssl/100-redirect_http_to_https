@@ -41,7 +41,7 @@ backend graceeffiong.tech-backend
 frontend graceeffiong.tech-frontend
         bind *:80
         bind *:443 ssl crt /etc/letsencrypt/live/www.graceeffiong.tech-0002/fullchain.pem
+        redirect scheme https if !{ ssl_fc }
         mode http
-        http-request redirect scheme https code 301 unless { ssl_fc }
         default_backend graceeffiong.tech-backend
 #--graceeffiong.tech-params-end--
