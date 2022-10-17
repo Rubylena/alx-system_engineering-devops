@@ -40,8 +40,7 @@ backend graceeffiong.tech-backend
         server 6717-web-02 3.236.65.72:80 check
 frontend graceeffiong.tech-frontend
         bind *:80
-        bind *:443 ssl crt /etc/letsencrypt/live/www.graceeffiong.tech/fullchain
-.pem
+        bind *:443 ssl crt /etc/letsencrypt/live/www.graceeffiong.tech/fullchain.pem
         mode http
         default_backend graceeffiong.tech-backend
 #--graceeffiong.tech-params-end--
