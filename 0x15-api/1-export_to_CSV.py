@@ -18,9 +18,9 @@ def exportCsv():
         writer = csv.writer(file, lineterminator='\n', quoting=csv.QUOTE_ALL)
         [writer.writerow(['{}'.format(field)
                           for field in (todo.get('userId'),
-                                        reqUser.get('name'),
+                                        reqUser.get('username'),
                                         todo.get('completed'),
-                                        # todo.get('title')
+                                        todo.get('title')
                                         )])
             for todo in reqTodo]
 
