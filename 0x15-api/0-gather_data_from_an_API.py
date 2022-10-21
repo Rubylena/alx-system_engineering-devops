@@ -15,4 +15,4 @@ json = reqUser.json()
 name = json.get('name')
 print('Employee {} is done with tasks({}/{}):'.format(name, len(todoComplete), len(filtered)))
 for i in range(len(todoComplete)):
-    print('\t{}'.format(todoComplete[i]['title']))
+    print('\t{}'.format(todoComplete[i].get('title')))
