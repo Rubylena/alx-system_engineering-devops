@@ -4,8 +4,7 @@ import requests
 from sys import argv
 
 
-def userTodo():
-    """ returns information about his/her TODO list progress. """
+if __name__ == "__main__":
     api = "https://jsonplaceholder.typicode.com/"
     if (len(argv) > 1):
         id = int(argv[1])
@@ -19,7 +18,3 @@ def userTodo():
               .format(name, len(todoComplete), len(filtered)))
         for i in todoComplete:
             print('\t {}'.format(i.get('title')))
-
-
-if __name__ == "__main__":
-    userTodo()
