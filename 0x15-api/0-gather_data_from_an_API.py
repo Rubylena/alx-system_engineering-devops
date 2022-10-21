@@ -20,5 +20,5 @@ def userTodo():
             print('\t {}'.format(i.get('title')))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     userTodo()
