@@ -5,20 +5,26 @@ import requests
 from sys import argv
 
 
-def exportJson():
+def exportFullJson():
     """ returns information about his/her TODO list progress. """
     api = "https://jsonplaceholder.typicode.com/"
-    reqUser = requests.get('{}users/'.format(api)).json()
+    reqUser = requests.get('{}users'.format(api)).json()
     reqTodo = requests.get('{}todos'.format(api)).json()
-    data = [{users.get('id'): [{'username': users.get('username'),
-                                'task': todo.get('title'),
-                                'completed': todo.get('completed')}
-                               for todo in reqTodo]}
-            for users in reqUser]
+
+    for users in reqUser:
+        data = {}
+        id = users.get('id')
+        username = users.get('username')
+        todos = list(filter(lambda x: x.get('userId') == id, reqTodo))
+        tasks = [{'username': username,
+                  'task': todo.get('title'),
+                  'completed': todo.get('completed')}
+                 for todo in todos]
+        data['{}'.format(id)] = tasks
 
     with open('todo_all_employees.json', 'w') as file:
         json.dump(data, file)
 
 
 if __name__ == "__main__":
-    exportJson()
+    exportFullJson()
