@@ -11,8 +11,8 @@ def exportFullJson():
     reqUser = requests.get('{}users'.format(api)).json()
     reqTodo = requests.get('{}todos'.format(api)).json()
 
+    data = {}
     for users in reqUser:
-        data = {}
         id = users.get('id')
         username = users.get('username')
         todos = list(filter(lambda x: x.get('userId') == id, reqTodo))
