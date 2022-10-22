@@ -13,7 +13,7 @@ def exportJson():
         reqUser = requests.get('{}users/{:d}'.format(api, id)).json()
         reqTodo = requests.get('{}todos'.format(api),
                                params={'userId': id}).json()
-        data = {id: [{'tasks': todo.get('title'),
+        data = {id: [{'task': todo.get('title'),
                       'completed': todo.get('completed'),
                       'username': reqUser.get('username')}
                      for todo in reqTodo]}
