@@ -9,6 +9,7 @@ import requests
 
 
 def number_of_subscribers(subreddit):
+    """ function to check number of subscribers """
     if subreddit is None or type(subreddit) is not str:
         return 0
 
@@ -16,5 +17,5 @@ def number_of_subscribers(subreddit):
     headers = {'User-Agent': 'chrome:0x16-api_advanced:v1'}
 
     response = requests.get(url, headers=headers).json()
-    subs = response.get('data').get('subscribers', 0)
+    subs = response.get('data', {}).get('subscribers', 0)
     return subs
