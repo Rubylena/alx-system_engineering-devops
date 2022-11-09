@@ -20,6 +20,7 @@ def top_ten(subreddit):
 
     if response.status_code != 200:
         print('None')
+        return
 
     response = response.json()
     title = response.get('data')
